@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Cloning Git') {
             steps {
-                git 'https://github.com/VOTRE_USER/tp4devops.git'
+                https://github.com/MAHDIBATIR/DevOps_jenkins.git'
             }
         }
         stage('Building Image') {
