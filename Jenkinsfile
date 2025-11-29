@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Cloning Git') {
             steps {
-                https://github.com/MAHDIBATIR/DevOps_jenkins.git'
+                git 'https://github.com/MAHDIBATIR/DevOps_jenkins.git'
             }
         }
         stage('Building Image') {
@@ -19,7 +19,6 @@ pipeline {
         }
         stage('Test Image') {
             steps {
-                // Simulation d'un test unitaire
                 echo "Tests passed successfully"
             }
         }
@@ -34,7 +33,6 @@ pipeline {
         }
         stage('Deploy Image') {
             steps {
-                // Deploiement automatique du conteneur fraichement cree
                 sh "docker rm -f tp2_pipeline || true"
                 sh "docker run -d -p 8082:80 --name tp2_pipeline ${registry}:${BUILD_NUMBER}"
             }
