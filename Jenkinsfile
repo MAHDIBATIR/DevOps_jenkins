@@ -36,7 +36,7 @@ pipeline {
             steps {
                 // Deploiement automatique du conteneur fraichement cree
                 sh "docker rm -f tp2_pipeline || true"
-                sh "docker run -d -p 8082:80 --name tp4_pipeline ${registry}:${BUILD_NUMBER}"
+                sh "docker run -d -p 8082:80 --name tp2_pipeline ${registry}:${BUILD_NUMBER}"
             }
         }
     }
