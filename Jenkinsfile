@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy Image') {
             steps {
                 // Deploiement automatique du conteneur fraichement cree
-                sh "docker rm -f tp4_pipeline || true"
+                sh "docker rm -f tp2_pipeline || true"
                 sh "docker run -d -p 8082:80 --name tp4_pipeline ${registry}:${BUILD_NUMBER}"
             }
         }
